@@ -9,7 +9,7 @@ module.exports = {
     options: [
         {
             type: "channel",
-            channel_types: [2], // Seulement salons vocaux
+            channel_types: [2],
             name: "salon",
             description: "Salon vocal à surveiller",
             required: true
@@ -23,7 +23,6 @@ module.exports = {
             return message.reply("> Ce n'est pas un salon vocal valide.");
         }
 
-        // Sauvegarde dans une base ou fichier - ici simplifié avec une map en mémoire
         if (!bot.vocalConfig) bot.vocalConfig = {};
         bot.vocalConfig[message.guild.id] = {
             creatorChannel: salon.id,
