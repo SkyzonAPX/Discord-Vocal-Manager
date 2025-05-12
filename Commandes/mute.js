@@ -25,7 +25,7 @@ module.exports = {
             return message.reply("> Vous n'êtes pas le propriétaire de ce salon.");
 
         if (!config || config.owner == target.id)
-            return message.reply({ content: `> T'en a marre de t'entendre ? (Je comprend... moi aussi tu me fait chier)`, ephemeral: true });
+            return message.reply({ content: `> T'en a marre de t'entendre ?`, ephemeral: true });
 
         await channel.permissionOverwrites.edit(target.id, { Speak: false });
         await message.reply(`🔇 <@${target.id}> a été mute dans le salon.`);
